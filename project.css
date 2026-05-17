@@ -8,6 +8,16 @@
 body{
     background:#f5f5f5;
     overflow-x:hidden;
+    max-width:1600px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* GLOBAL */
+
+a,
+button{
+    cursor:pointer;
 }
 
 /* NAVBAR */
@@ -20,6 +30,10 @@ body{
     gap:15px;
     padding:15px 25px;
     background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo a{
@@ -40,19 +54,27 @@ body{
     border:1px solid gray;
     border-radius:30px;
     outline:none;
+    font-size:16px;
 }
+
+.search input:focus{
+    border:1px solid #a435f0;
+}
+
+/* NAV LINKS */
 
 .nav-links{
     display:flex;
     gap:15px;
     flex-wrap:wrap;
+    justify-content:center;
 }
 
 .nav-links a{
     text-decoration:none;
     color:black;
     font-weight:bold;
-    transition:0.3s;
+    transition:0.3s ease;
 }
 
 .nav-links a:hover{
@@ -64,6 +86,7 @@ body{
 .menu{
     display:flex;
     justify-content:center;
+    align-items:center;
     gap:20px;
     flex-wrap:wrap;
     background:#1c1d1f;
@@ -74,32 +97,58 @@ body{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
 }
 
 .menu a:hover{
     color:#a435f0;
+    transform:translateY(-2px);
 }
 
 /* BANNER */
 
 .banner{
-    background:#a435f0;
+    background:linear-gradient(to right,#a435f0,#8710d8);
     color:white;
     text-align:center;
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
 .banner h1{
-    font-size:50px;
-    margin-bottom:10px;
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.banner p{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+/* BANNER BUTTON */
+
+.banner button{
+    padding:14px 30px;
+    border:none;
+    background:white;
+    color:#a435f0;
+    font-size:16px;
+    font-weight:bold;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.banner button:hover{
+    background:#1c1d1f;
+    color:white;
 }
 
 /* SECTION TITLE */
 
 .section-title{
     text-align:center;
-    margin-top:40px;
-    font-size:35px;
+    margin-top:50px;
+    font-size:36px;
+    color:#1c1d1f;
 }
 
 /* COURSES */
@@ -115,14 +164,14 @@ body{
 .course-card{
     width:280px;
     background:white;
-    border-radius:10px;
+    border-radius:12px;
     overflow:hidden;
-    transition:0.4s;
+    transition:0.4s ease;
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .course-card:hover{
-    transform:translateY(-10px);
+    transform:scale(1.03);
 }
 
 .course-card img{
@@ -138,11 +187,24 @@ body{
 
 .course-content h3{
     margin-bottom:10px;
+    color:#1c1d1f;
 }
 
 .course-content p{
     margin-bottom:8px;
     color:gray;
+}
+
+/* PRICE */
+
+.price{
+    color:#1c1d1f;
+    font-weight:bold;
+}
+
+.price del{
+    color:gray;
+    margin-left:5px;
 }
 
 /* TOPIC */
@@ -163,6 +225,11 @@ body{
     border-radius:30px;
     border:1px solid gray;
     outline:none;
+    font-size:16px;
+}
+
+.topic input:focus{
+    border:1px solid #a435f0;
 }
 
 /* FOOTER */
@@ -187,20 +254,48 @@ body{
     gap:10px;
 }
 
+.footer-box h3{
+    margin-bottom:10px;
+}
+
 .footer-box a{
     color:white;
     text-decoration:none;
+    transition:0.3s;
 }
 
 .footer-box a:hover{
     color:#a435f0;
 }
 
+/* SOCIAL ICONS */
+
+.social-icons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    color:white;
+    font-size:24px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#a435f0;
+    transform:scale(1.2);
+}
+
+/* COPYRIGHT */
+
 .copy{
     text-align:center;
     margin-top:30px;
     border-top:1px solid gray;
     padding-top:20px;
+    font-size:15px;
 }
 
 /* RESPONSIVE */
@@ -220,12 +315,20 @@ body{
         justify-content:center;
     }
 
+    .banner{
+        padding:60px 15px;
+    }
+
     .banner h1{
-        font-size:35px;
+        font-size:38px;
+    }
+
+    .banner p{
+        font-size:16px;
     }
 
     .section-title{
-        font-size:28px;
+        font-size:30px;
     }
 
     .course-card{
@@ -236,5 +339,9 @@ body{
     .footer-container{
         flex-direction:column;
         text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
     }
 }
